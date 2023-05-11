@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./script.js"></script>
+    <title>Coronaviruse</title>
+    <link rel = "icon" href =  "coronaPNG.jpg" type = "image/x-icon"> 
+</head>
+<body>
+    <div>
+        <h1 id="title"><u>Corona management for the hospital clinic</u></h1>
+    </div>  
+    <div>
+        <label id="getUsers"><span> </span><input type="button" value="Get all members" onclick="getAllUsers()"/></label>
+        <label id="getUsers"><span> </span><input type="button" value="How much members are not vaccinated" onclick="getNumber()"/></label>
+        <div id="numberOfUsers">
+        </div>
+        <table id="table">
+         <thead>
+             <th>name</th>
+             <th>ID</th>
+             <th>city</th>
+             <th>street</th>
+             <th>number Of House</th>
+             <th>phone</th>
+             <th>mobilePhone</th>
+             <th>date1</th>
+             <th>producer1</th>
+             <th>date2</th>
+             <th>producer2</th>
+             <th>date3</th>
+             <th>producer3</th>
+             <th>date4</th>
+             <th>producer4</th>
+             <th>date of result</th>
+             <th>date of recovvrey</th>
+         </thead>
+         <tbody id="tbody">
+         </tbody>
+        </table>
+    </div>
+    <div id="getUserDetails">
+        <label for="field2"><span>ID <span class="required">*</span></span><input type="number" class="input-field" name="field2" value="" id="userID" max="9"/></label>   
+        <label><span> </span><input type="button" value="get member details by ID" onclick="getUserDetails()"/></label>
+        <label><span> </span><input type="button" value="get member corona details by ID" onclick="getCoronaDetails()"/></label>
+        <div id="userDetails">
+    
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <label><span> </span><input type="button" value="Monthly corona summary" onclick="getActiveUsers()"/></label>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </div>
+    <div>
+        <div class="form-style-2">
+            <div class="form-style-2-heading">Add member</div>
+            <form action="" method="post">
+            <label for="field1"><span>Full name <span class="required">*</span></span><input type="text" class="input-field" name="field1" value="" id="name"/></label>
+
+            <label for="field2"><span>ID <span class="required">*</span></span><input type="number" class="input-field" name="field2" value="" id="ID" max="9"/></label>   
+
+            <label for="field2"><span>City <span class="required">*</span></span><input type="text" class="input-field" name="field2" value="" id="city"/></label>
+            <label for="field2"><span>Street <span class="required">*</span></span><input type="text" class="input-field" name="field2" value="" id="street"/></label>
+            <label for="field2"><span>Number of house <span class="required">*</span></span><input type="number" class="input-field" name="field2" value="" id="numberOfHouse"/></label>
+
+            <label for="field2"><span>Date of Birth <span class="required">*</span></span><input type="date" class="input-field" name="field2" value="" id="dateOfBirth" /></label>
+
+            <label for="field2"><span>Phone <span class="required"></span></span><input type="number" class="input-field" name="field2" value="" id="phone" /></label>
+
+            <label for="field2"><span>Mobile Phone <span class="required">*</span></span><input type="number" class="input-field" name="field2" value="" id="mobilePhone" max="10"/></label>
+           
+            <label for="field2"><span>date 1 of vaccination<span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="date1"/></label>
+            <label for="field2"><span>Vaccination producer 1<span class="required"></span></span><input type="text" class="input-field" name="field2" value="" id="date1Producer"/></label>
+
+            <label for="field2"><span>date 2 of vaccination<span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="date2"/></label>         
+            <label for="field2"><span>Vaccination producer 2<span class="required"></span></span><input type="text" class="input-field" name="field2" value="" id="date2Producer"/></label>
+
+            <label for="field2"><span>date 3 of vaccination<span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="date3"/></label>
+            <label for="field2"><span>Vaccination producer 3<span class="required"></span></span><input type="text" class="input-field" name="field2" value="" id="date3Producer"/></label>
+
+            <label for="field2"><span>date 4 of vaccination<span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="date4"/></label>
+            <label for="field2"><span>Vaccination producer 4<span class="required"></span></span><input type="text" class="input-field" name="field2" value="" id="date4Producer"/></label>
+
+            <label for="field2"><span>Date of Result <span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="dateOfResult" /></label>
+            <label for="field2"><span>Date of recovery <span class="required"></span></span><input type="date" class="input-field" name="field2" value="" id="dateOfRecovery"/></label>
+
+            <label for="field2"><span>Uploading a picture <span class="required"></span></span>
+            <input type="file" class="input-field" name="field2" value="" id="img" /></label>
+
+            <label><span> </span><input type="button" value="Submit" onclick="submitUser()"/></label>
+            </form>
+            </div>
+    </div>
+   <div id="imageDiv">
+   </div>
+   <div class="footer vertical-adjust">
+    <span>By Neima Arama 2023 </span>
+</div>
+</body>
+</html>
